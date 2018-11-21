@@ -19,6 +19,62 @@
 
 # Parquet #
 
+### Version 1.11.0 ###
+
+Release Notes - Parquet - Version 1.11.0
+
+#### Bug
+
+*   [PARQUET-1364](https://issues.apache.org/jira/browse/PARQUET-1364) - Column Indexes: Invalid row indexes for pages starting with nulls
+*   [PARQUET-952](https://issues.apache.org/jira/browse/PARQUET-952) - Avro union with single type fails with 'is not a group'
+*   [PARQUET-1128](https://issues.apache.org/jira/browse/PARQUET-1128) - \[Java\] Upgrade the Apache Arrow version to 0.8.0 for SchemaConverter
+*   [PARQUET-1285](https://issues.apache.org/jira/browse/PARQUET-1285) - \[Java\] SchemaConverter should not convert from TimeUnit.SECOND AND TimeUnit.NANOSECOND of Arrow
+*   [PARQUET-1293](https://issues.apache.org/jira/browse/PARQUET-1293) - Build failure when using Java 8 lambda expressions
+*   [PARQUET-1296](https://issues.apache.org/jira/browse/PARQUET-1296) - Travis kills build after 10 minutes, because "no output was received"
+*   [PARQUET-1297](https://issues.apache.org/jira/browse/PARQUET-1297) - \[Java\] SchemaConverter should not convert from Timestamp(TimeUnit.SECOND) and Timestamp(TimeUnit.NANOSECOND) of Arrow
+*   [PARQUET-1304](https://issues.apache.org/jira/browse/PARQUET-1304) - Release 1.10 contains breaking changes for Hive
+*   [PARQUET-1305](https://issues.apache.org/jira/browse/PARQUET-1305) - Backward incompatible change introduced in 1.8
+*   [PARQUET-1309](https://issues.apache.org/jira/browse/PARQUET-1309) - Parquet Java uses incorrect stats and dictionary filter properties
+*   [PARQUET-1311](https://issues.apache.org/jira/browse/PARQUET-1311) - Update README.md
+*   [PARQUET-1317](https://issues.apache.org/jira/browse/PARQUET-1317) - ParquetMetadataConverter throw NPE
+*   [PARQUET-1341](https://issues.apache.org/jira/browse/PARQUET-1341) - Null count is suppressed when columns have no min or max and use unsigned sort order
+*   [PARQUET-1344](https://issues.apache.org/jira/browse/PARQUET-1344) - Type builders don't honor new logical types
+*   [PARQUET-1351](https://issues.apache.org/jira/browse/PARQUET-1351) - Travis builds fail for parquet-format
+*   [PARQUET-1368](https://issues.apache.org/jira/browse/PARQUET-1368) - ParquetFileReader should close its input stream for the failure in constructor
+*   [PARQUET-1371](https://issues.apache.org/jira/browse/PARQUET-1371) - Time/Timestamp UTC normalization parameter doesn't work
+*   [PARQUET-1407](https://issues.apache.org/jira/browse/PARQUET-1407) - Data loss on duplicate values with AvroParquetWriter/Reader
+*   [PARQUET-1417](https://issues.apache.org/jira/browse/PARQUET-1417) - BINARY\_AS\_SIGNED\_INTEGER\_COMPARATOR fails with IOBE for the same arrays with the different length
+*   [PARQUET-1421](https://issues.apache.org/jira/browse/PARQUET-1421) - InternalParquetRecordWriter logs debug messages at the INFO level
+*   [PARQUET-1440](https://issues.apache.org/jira/browse/PARQUET-1440) - Parquet-tools: Decimal values stored in an int32 or int64 in the parquet file aren't displayed with their proper scale
+*   [PARQUET-1456](https://issues.apache.org/jira/browse/PARQUET-1456) - Use page index, ParquetFileReader throw ArrayIndexOutOfBoundsException
+
+#### New Feature
+
+*   [PARQUET-1201](https://issues.apache.org/jira/browse/PARQUET-1201) - Column indexes
+*   [PARQUET-1253](https://issues.apache.org/jira/browse/PARQUET-1253) - Support for new logical type representation
+*   [PARQUET-1381](https://issues.apache.org/jira/browse/PARQUET-1381) - Add merge blocks command to parquet-tools
+*   [PARQUET-1388](https://issues.apache.org/jira/browse/PARQUET-1388) - Nanosecond precision time and timestamp - parquet-mr
+
+#### Improvement
+
+*   [PARQUET-1321](https://issues.apache.org/jira/browse/PARQUET-1321) - LogicalTypeAnnotation.LogicalTypeAnnotationVisitor#visit methods should have a return value
+*   [PARQUET-1335](https://issues.apache.org/jira/browse/PARQUET-1335) - Logical type names in parquet-mr are not consistent with parquet-format
+*   [PARQUET-1336](https://issues.apache.org/jira/browse/PARQUET-1336) - PrimitiveComparator should implements Serializable
+*   [PARQUET-1365](https://issues.apache.org/jira/browse/PARQUET-1365) - Don't write page level statistics
+*   [PARQUET-1383](https://issues.apache.org/jira/browse/PARQUET-1383) - Parquet tools should indicate UTC parameter for time/timestamp types
+*   [PARQUET-1390](https://issues.apache.org/jira/browse/PARQUET-1390) - \[Java\] Upgrade to Arrow 0.10.0
+*   [PARQUET-1399](https://issues.apache.org/jira/browse/PARQUET-1399) - Move parquet-mr related code from parquet-format
+*   [PARQUET-1410](https://issues.apache.org/jira/browse/PARQUET-1410) - Refactor modules to use the new logical type API
+*   [PARQUET-1414](https://issues.apache.org/jira/browse/PARQUET-1414) - Limit page size based on maximum row count
+*   [PARQUET-1418](https://issues.apache.org/jira/browse/PARQUET-1418) - Run integration tests in Travis
+*   [PARQUET-1435](https://issues.apache.org/jira/browse/PARQUET-1435) - Benchmark filtering column-indexes
+
+#### Task
+
+*   [PARQUET-968](https://issues.apache.org/jira/browse/PARQUET-968) - Add Hive/Presto support in ProtoParquet
+*   [PARQUET-1436](https://issues.apache.org/jira/browse/PARQUET-1436) - TimestampMicrosStringifier shows wrong microseconds for timestamps before 1970
+*   [PARQUET-1452](https://issues.apache.org/jira/browse/PARQUET-1452) - Deprecate old logical types API
+
 ### Version 1.10.0 ###
 
 Release Notes - Parquet - Version 1.10.0
@@ -422,7 +478,7 @@ Release Notes - Parquet - Version 1.10.0
 * ISSUE [346](https://github.com/Parquet/parquet-mr/pull/346): stop using strings and b64 for compressed input splits
 * ISSUE [345](https://github.com/Parquet/parquet-mr/pull/345): set cascading version to 2.5.3
 * ISSUE [342](https://github.com/Parquet/parquet-mr/pull/342): compress kv pairs in ParquetInputSplits
- 
+
 ### Version 1.4.0 ###
 * ISSUE [333](https://github.com/Parquet/parquet-mr/pull/333): Compress schemas in split
 * ISSUE [329](https://github.com/Parquet/parquet-mr/pull/329): fix filesystem resolution
@@ -562,37 +618,37 @@ Release Notes - Parquet - Version 1.10.0
 * ISSUE 159: Counter for mapred
 * ISSUE 156: Fix site
 * ISSUE 153: Fix projection required field
-    
+
 ### Version 1.1.1 ###
 * ISSUE 150: add thrift validation on read
 
 ### Version 1.1.0 ###
-* ISSUE 149: changing default block size to 128mb  
-* ISSUE 146: Fix and add unit tests for Hive nested types  
-* ISSUE 145: add getStatistics method to parquetloader  
-* ISSUE 144: Map key fields should allow other types than strings  
-* ISSUE 143: Fix empty encoding col metadata  
-* ISSUE 142: Fix total size row group  
-* ISSUE 141: add parquet counters for benchmark  
-* ISSUE 140: Implemented partial schema for GroupReadSupport  
-* ISSUE 138: fix bug of wrong column metadata size  
-* ISSUE 137: ParquetMetadataConverter bug  
-* ISSUE 133: Update plugin versions for maven aether migration - fixes #125  
-* ISSUE 130: Schema validation should not validate the root element's name  
-* ISSUE 127: Adding dictionary encoding for non string types.. #99  
-* ISSUE 125: Unable to build  
-* ISSUE 124: Fix Short and Byte types in Hive SerDe.  
-* ISSUE 123: Fix Snappy compressor in parquet-hadoop.  
-* ISSUE 120: Fix RLE bug with partial literal groups at end of stream.  
-* ISSUE 118: Refactor column reader  
-* ISSUE 115: Map key fields should allow other types than strings  
-* ISSUE 103: Map key fields should allow other types than strings  
-* ISSUE 99: Dictionary encoding for non string types (float  double  int  long  boolean)  
-* ISSUE 47: Add tests for parquet-scrooge and parquet-cascading 
+* ISSUE 149: changing default block size to 128mb
+* ISSUE 146: Fix and add unit tests for Hive nested types
+* ISSUE 145: add getStatistics method to parquetloader
+* ISSUE 144: Map key fields should allow other types than strings
+* ISSUE 143: Fix empty encoding col metadata
+* ISSUE 142: Fix total size row group
+* ISSUE 141: add parquet counters for benchmark
+* ISSUE 140: Implemented partial schema for GroupReadSupport
+* ISSUE 138: fix bug of wrong column metadata size
+* ISSUE 137: ParquetMetadataConverter bug
+* ISSUE 133: Update plugin versions for maven aether migration - fixes #125
+* ISSUE 130: Schema validation should not validate the root element's name
+* ISSUE 127: Adding dictionary encoding for non string types.. #99
+* ISSUE 125: Unable to build
+* ISSUE 124: Fix Short and Byte types in Hive SerDe.
+* ISSUE 123: Fix Snappy compressor in parquet-hadoop.
+* ISSUE 120: Fix RLE bug with partial literal groups at end of stream.
+* ISSUE 118: Refactor column reader
+* ISSUE 115: Map key fields should allow other types than strings
+* ISSUE 103: Map key fields should allow other types than strings
+* ISSUE 99: Dictionary encoding for non string types (float  double  int  long  boolean)
+* ISSUE 47: Add tests for parquet-scrooge and parquet-cascading
 
 ### Version 1.0.1 ###
-* ISSUE 126: Unit tests for parquet cascading  
-* ISSUE 121: fix wrong RecordConverter for ParquetTBaseScheme  
-* ISSUE 119: fix compatibility with thrift  remove unused dependency 
+* ISSUE 126: Unit tests for parquet cascading
+* ISSUE 121: fix wrong RecordConverter for ParquetTBaseScheme
+* ISSUE 119: fix compatibility with thrift  remove unused dependency
 
 ### Version 1.0.0 ###
